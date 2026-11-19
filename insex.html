@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Digital Twin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Live Digital Twin Dashboard</h1>
+            <p>Virtual Machine Real-Time Monitoring System</p>
+        </header>
+
+        <div class="top-bar">
+            <div class="status-box">
+                <span>Machine Status: </span>
+                <strong id="machine-status" class="status-on">ON</strong>
+            </div>
+            <button id="toggle-btn" onclick="toggleMachine()">Stop Machine</button>
+        </div>
+
+        <div id="alert-box" class="alert hidden">
+            ⚠️ Warning: Parameter crossed safe threshold limit!
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Temperature</h3>
+                <p id="temp-val">45 °C</p>
+                <span>Safe Limit: &lt; 80 °C</span>
+            </div>
+            <div class="card">
+                <h3>Speed</h3>
+                <p id="speed-val">1500 RPM</p>
+                <span>Normal: 1200 - 2500 RPM</span>
+            </div>
+            <div class="card">
+                <h3>Pressure</h3>
+                <p id="pressure-val">32 PSI</p>
+                <span>Safe Limit: &lt; 50 PSI</span>
+            </div>
+            <div class="card">
+                <h3>System Health</h3>
+                <p id="health-val">Normal</p>
+                <span>Live Simulation Active</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Live Telemetry Graph (Temperature & Pressure)</h3>
+            <canvas id="twinChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
